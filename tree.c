@@ -1,6 +1,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 #include <dirent.h>
 
 
@@ -17,11 +18,6 @@ int main(int argc, char** argv)
 
   if (argc > 1)
   {
-    if (chdir(argv[1]))
-    {
-      perror(argv[1]);
-      exit(EXIT_FAILURE);
-    }
     printf("- %s\n", argv[1]);  
     tree(argv[1]);
   }
